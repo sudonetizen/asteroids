@@ -7,6 +7,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     running = True
+    player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
     dt = 0
  
     while running:
@@ -15,11 +16,11 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         
+        player.update(dt)
         # fill screen with color
         screen.fill("black")            
         
         # game 
-        player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, PLAYER_RADIUS)
         player.draw(screen) 
 
         # refresh screen
