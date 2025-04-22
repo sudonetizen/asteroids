@@ -48,7 +48,7 @@ def main():
         for item in asteroids:
             for shot in shots:
                 if item.check(shot):
-                    item.kill()
+                    item.split()
                     shot.kill()
         
         # game 
