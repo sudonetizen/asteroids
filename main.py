@@ -45,6 +45,12 @@ def main():
                 print("Game over!")
                 sys.exit()         
         
+        for item in asteroids:
+            for shot in shots:
+                if item.check(shot):
+                    item.kill()
+                    shot.kill()
+        
         # game 
         for item in drawable:
             item.draw(screen)
